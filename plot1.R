@@ -3,7 +3,7 @@ pm25data<-readRDS("./summarySCC_PM25.rds")
 scc_detail<-readRDS("./Source_Classification_Code.rds")
 
 #calculate total emissions for each year
-total_emissions<-with(pm25data, tapply(Emissions, year, sum,))
+total_emissions<-with(pm25data, tapply(Emissions, year, sum))
 
 #plot 1
 options(scipen=10) #to remove scientific notation from plots

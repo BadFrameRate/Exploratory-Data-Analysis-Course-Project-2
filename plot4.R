@@ -3,7 +3,7 @@ pm25data<-readRDS("./summarySCC_PM25.rds")
 scc_detail<-readRDS("./Source_Classification_Code.rds")
 
 #calculating and modifying data for plotting
-sources<-scc_detail[grep("Coal",scc_detail$Short.Name),"SCC"]
+sources<-scc_detail[grep("^Fuel.*Coal",scc_detail$EI.Sector),"SCC"]
 totemissions<-with(pm25data[pm25data[,2] %in% as.character(sources),],
                    tapply(Emissions, year, sum))
 #plot 4

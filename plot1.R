@@ -6,5 +6,8 @@ scc_detail<-readRDS("./Source_Classification_Code.rds")
 total_emissions<-with(pm25data, tapply(Emissions, year, sum,))
 
 #plot 1
+options(scipen=10) #to remove scientific notation from plots
+png("plot1.png")
 plot(names(total_emissions), total_emissions, typ="l", col="red", lwd=2, 
      ylab="Total PM2.5 emmissions in tons", xlab="Year")
+dev.off()

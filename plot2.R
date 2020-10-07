@@ -4,7 +4,7 @@ scc_detail<-readRDS("./Source_Classification_Code.rds")
 
 
 #calculate total emissions for each year in fips=24510
-totemissions24510<-with(data1[which(data1$fips=="24510"),],tapply(Emissions,year,sum))
+totemissions24510<-with(pm25data[which(pm25data$fips=="24510"),],tapply(Emissions,year,sum))
 
 #plot 2
 options(scipen=10)
